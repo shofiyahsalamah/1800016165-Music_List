@@ -1,0 +1,33 @@
+<mat-toolbar color="light">
+  <span>PLAYLIST MUSIC</span>
+  <span class="spacer"></span>
+  <button mat-raised-button color="blue" class="logout" routerLink="/login">Logout</button>
+</mat-toolbar>
+<div style=" padding:px">
+  <div class="container">
+    <button class="btn-tambah" mat-raised-button color="light" (click)="buat()">Tambah Musik</button>
+    <mat-card style="width: 100%;">
+      <mat-card-header>
+        <mat-card-title>Daftar Musik</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <img src="assets/sofii.png" width="945px" height="210px">
+        <mat-list>
+          <mat-list-item *ngFor="let item of dataFilm" class="posisi1">
+            <span matListAvatar class="posisi">
+              <img style="height: 50px;" src="/assets/sofi.png" alt="">
+            </span>
+            <h3 matLine><b>{{item.judul_lagu}}</b></h3>
+            <p matLine>
+              <span> penyanyi : {{item.penyanyi}} </span>
+            </p>
+            <p matLine>
+              <span>genre : {{item.genre}}</span>
+            </p>
+            <button class="btn-edit" mat-stroked-button color="dark" (click)="edit(item)">Edit</button>
+            <button class="btn-delete" mat-stroked-button color="light" (click)="hapus(item.id)">Hapus</button>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>

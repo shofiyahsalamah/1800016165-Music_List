@@ -1,0 +1,22 @@
+<h3 mat-dialog-title>Tambahkan musik </h3>
+<div mat-dialog-content>
+  <mat-form-field style="width: 100%;">
+    <mat-label>Judul Lagu</mat-label>
+    <input matInput [(ngModel)]="data.judul_lagu">
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <mat-label>Penyanyi</mat-label>
+    <input matInput [(ngModel)]="data.penyanyi">
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <mat-label>Genre</mat-label>
+    <input matInput [(ngModel)]="data.genre">
+  </mat-form-field>
+</div>
+<mat-dialog-actions>
+  <span class="spacer"></span>
+  <button mat-button mat-dialog-close>Batal</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="simpan(data)">Simpan</button>
+</mat-dialog-actions>
